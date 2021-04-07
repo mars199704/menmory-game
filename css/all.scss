@@ -1,23 +1,79 @@
+$color: blue;
+
 body{
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.memoryGame{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  height: 100vh;
+}
+
+.start{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  text-transform: uppercase;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: $color;
+  svg, svg rect{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    fill: transparent;
+  }
+  svg rect{
+    stroke: $color;
+    stroke-width: 4px;
+    transition: 1s;
+    stroke-dasharray: 800, 800;
+    stroke-dashoffset: 0;
+  }
+  &:hover svg rect{
+    stroke-dasharray: 200, 600;
+    stroke-dashoffset: 350;
+    stroke: $color;
+  }
+}
+
+.start.none{
+  display: none;
 }
 
 
 .game{
-  margin: 30px auto 0;
-  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .grid{
-  width: 300px;
-  height: 300px;
+  width: 600px;
+  height: 600px;
   display: flex;
   flex-flow: row wrap;
 }
 
 .cell{
-  width: 45px;
-  height: 45px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
   position: relative;
   transform-style: preserve-3d;
@@ -44,7 +100,7 @@ body{
 
 .cellBack{
   transform: rotateY(0deg);
-  background-color: red;
+  background-color: $color;
 }
 
 .cell.open .cellBack{
