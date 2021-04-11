@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,600&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="./css/all.css">
 </head>
 <body>
   <div class="memoryGame">
-    <a class="start" href="#">
-      <svg>
-        <rect></rect>
-      </svg>
-      Click and Start
-    </a>
     <div class="game">
       <div class="grid"></div>
     </div>
+    <div class="information">
+      <div class="time" id="Check_Txt">
+        <p id="CheckTime">0 min 0 sec</p>
+      </div>
+      <button class="create">Create a game</button>
+      <button class="startTime">start</button>
+    </div>
+  </div>
+  <div class="winningMessage none">
+    <button class="restart">restart</button>
   </div>
     <script src="./all.js"></script>
 </body>
 </html>
+
 
 
